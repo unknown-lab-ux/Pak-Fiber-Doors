@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Feedback | Rate, Complain or Appreciate | Pak Fiber Doors</title>
+    <meta
+      name="description"
+      content="Share your rating, complaint or appreciation for Pak Fiber Doors, Gujar Khan. Your message opens in WhatsApp, ready to send."
+    />
+    <meta name="theme-color" content="#1b56a5" />
+    <link rel="canonical" href="https://pakfiberdoors.com/feedback.html" />
+    <link rel="icon" href="logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Feedback | Pak Fiber Doors" />
+    <meta property="og:description" content="Rate us, report a problem or say thank you." />
+    <meta property="og:url" content="https://pakfiberdoors.com/feedback.html" />
+    <meta property="og:image" content="https://pakfiberdoors.com/heroimage.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-p="feedback">
+    <!-- =====================================
+     NAVBAR (built by script.js)
+===================================== -->
+    <header id="nav"></header>
+    <main>
+      <!-- =====================================
+     PAGE BANNER
+===================================== -->
+      <div class="bn">
+        <div class="w">
+          <h1 class="up">Your Feedback Matters</h1>
+          <p class="up" style="--d: 0.2s">
+            Rate us, report a problem or say thank you. Your message opens in WhatsApp, ready to send.
+          </p>
+        </div>
+      </div>
+      <!-- =====================================
+     FEEDBACK FORMS (3 tabs, send to WhatsApp)
+===================================== -->
+      <section style="padding-top: 0">
+        <div class="w">
+          <div class="fb">
+            <div class="tabs">
+              <button class="on" data-t="p1">
+                <i class="fa-solid fa-star"></i>
+                Rating
+              </button>
+              <button data-t="p2">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                Complaint
+              </button>
+              <button data-t="p3">
+                <i class="fa-solid fa-heart"></i>
+                Appreciation
+              </button>
+            </div>
+            <form class="fp on" id="p1" novalidate data-h="⭐ *RATING* — Pak Fiber Doors">
+              <div class="fr">
+                <div>
+                  <label>Your rating</label>
+                  <div class="stz" id="stz">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <p class="rl" id="rl"></p>
+                  <span class="er" id="rer">Please choose a star rating.</span>
+                </div>
+                <div>
+                  <label for="a1">Your name</label>
+                  <input id="a1" name="Name" required maxlength="50" autocomplete="name" />
+                  <span class="er">Please enter your name.</span>
+                </div>
+                <div>
+                  <label for="a2">City</label>
+                  <input id="a2" name="City" maxlength="40" />
+                </div>
+                <div>
+                  <label for="a3">Service</label>
+                  <select id="a3" name="Service">
+                    <option>Fiber Door Manufacturing</option>
+                    <option>Door Polish</option>
+                    <option>Door Fitting</option>
+                    <option>Fiber Frame Polish</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="a4">Comment (optional)</label>
+                  <textarea id="a4" name="Comment" rows="3" maxlength="400"></textarea>
+                </div>
+                <button class="btn b-g" type="submit">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  Send Rating
+                </button>
+              </div>
+            </form>
+            <form class="fp" id="p2" novalidate data-h="⚠️ *COMPLAINT* — Pak Fiber Doors">
+              <div class="fr">
+                <div>
+                  <label for="b1">Your name</label>
+                  <input id="b1" name="Name" required maxlength="50" autocomplete="name" />
+                  <span class="er">Please enter your name.</span>
+                </div>
+                <div>
+                  <label for="b2">Phone number</label>
+                  <input id="b2" name="Phone" type="tel" required maxlength="20" autocomplete="tel" />
+                  <span class="er">Please enter a valid phone number.</span>
+                </div>
+                <div>
+                  <label for="b3">City</label>
+                  <input id="b3" name="City" maxlength="40" />
+                </div>
+                <div>
+                  <label for="b4">Issue type</label>
+                  <select id="b4" name="Issue">
+                    <option>Door Quality</option>
+                    <option>Installation</option>
+                    <option>Delivery Delay</option>
+                    <option>Polish</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="b5">Article number (if any)</label>
+                  <input id="b5" name="Article" maxlength="30" placeholder="e.g. Article 12" />
+                </div>
+                <div>
+                  <label for="b6">Details</label>
+                  <textarea id="b6" name="Details" rows="4" maxlength="600" required></textarea>
+                  <span class="er">Please describe the problem.</span>
+                </div>
+                <button class="btn b-g" type="submit">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  Send Complaint
+                </button>
+              </div>
+            </form>
+            <form class="fp" id="p3" novalidate data-h="❤️ *APPRECIATION* — Pak Fiber Doors">
+              <div class="fr">
+                <div>
+                  <label for="c1">Your name</label>
+                  <input id="c1" name="Name" required maxlength="50" autocomplete="name" />
+                  <span class="er">Please enter your name.</span>
+                </div>
+                <div>
+                  <label for="c2">City</label>
+                  <input id="c2" name="City" maxlength="40" />
+                </div>
+                <div>
+                  <label for="c3">Service</label>
+                  <select id="c3" name="Service">
+                    <option>Fiber Door Manufacturing</option>
+                    <option>Door Polish</option>
+                    <option>Door Fitting</option>
+                    <option>Fiber Frame Polish</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="c4">Your message</label>
+                  <textarea id="c4" name="Message" rows="4" maxlength="500" required></textarea>
+                  <span class="er">Please write a short message.</span>
+                </div>
+                <button class="btn b-g" type="submit">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  Send Appreciation
+                </button>
+              </div>
+            </form>
+            <div class="ok" id="ok">
+              <i class="fa-solid fa-circle-check"></i>
+              <h3>Thank you!</h3>
+              <p>WhatsApp opened with your message. Tap Send there to finish.</p>
+              <button class="btn b-b" id="again" type="button">Send another</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- =====================================
+     REVIEWS WALL (data in reviews.js)
+===================================== -->
+      <section class="alt">
+        <div class="w ctr">
+          <span class="tag rv">Customer reviews</span>
+          <h2 class="t rv">What Others Are Saying</h2>
+          <p class="rv">Feedback from customers who ordered from Pak Fiber Doors.</p>
+          <div class="rg" id="fr"></div>
+        </div>
+      </section>
+    </main>
+    <!-- =====================================
+     FOOTER (built by script.js)
+===================================== -->
+    <footer class="ft" id="foot"></footer>
+    <script src="reviews.js"></script>
+    <script src="script.js"></script>
+    <script>
+      // ===== TABS =====
+      const tabs = $$(".tabs button"),
+        panels = $$(".fp");
+      tabs.forEach(
+        (b) =>
+          (b.onclick = () => {
+            tabs.forEach((x) => x.classList.toggle("on", x == b));
+            panels.forEach((p) => p.classList.toggle("on", p.id == b.dataset.t));
+          }),
+      );
+
+      // ===== STAR RATING =====
+      const LABELS = ["", "Very poor", "Poor", "Okay", "Good", "Excellent"];
+      const stars = $$("#stz i");
+      let rate = 0;
+      const paint = (n) => {
+        stars.forEach((s, k) => s.classList.toggle("on", k < n));
+        $("#rl").textContent = n ? n + "/5 - " + LABELS[n] : "";
+      };
+      stars.forEach((s, k) => {
+        s.onclick = () => {
+          rate = k + 1;
+          paint(rate);
+          $("#rer").style.display = "none";
+        };
+        s.onmouseenter = () => paint(k + 1);
+        s.onmouseleave = () => paint(rate);
+      });
+
+      // ===== SUBMIT — checks required fields, then opens WhatsApp with the message =====
+      panels.forEach((form) => {
+        form.onsubmit = (e) => {
+          e.preventDefault();
+          let ok = true;
+          form.querySelectorAll("[required]").forEach((f) => {
+            let bad = !f.value.trim();
+            if (f.type == "tel" && f.value.replace(/\D/g, "").length < 10) bad = true;
+            f.classList.toggle("bad", bad);
+            f.nextElementSibling.style.display = bad ? "block" : "none";
+            if (bad) ok = false;
+          });
+          if (form.id == "p1" && !rate) {
+            $("#rer").style.display = "block";
+            ok = false;
+          }
+          if (!ok) return;
+
+          // Build the WhatsApp message from every field that has a name="" attribute
+          const lines = [...form.querySelectorAll("[name]")].map(
+            (f) => `*${f.name}:* ${f.value.trim() || "-"}`,
+          );
+          if (form.id == "p1") lines.unshift(`*Rating:* ${rate}/5 (${LABELS[rate]})`);
+          const msg = `${form.dataset.h}\n\n${lines.join("\n")}\n\n_Sent from pakfiberdoors.com_`;
+          window.open(L(msg), "_blank", "noopener");
+
+          // Show the thank-you box
+          $(".tabs").style.display = "none";
+          panels.forEach((p) => p.classList.remove("on"));
+          $("#ok").classList.add("s");
+        };
+      });
+      $("#again").onclick = () => {
+        panels.forEach((p) => p.reset());
+        rate = 0;
+        paint(0);
+        $("#ok").classList.remove("s");
+        $(".tabs").style.display = "";
+        tabs[0].click();
+      };
+
+      // ===== REVIEWS WALL (data in reviews.js) =====
+      $("#fr").innerHTML = FEEDBACK_REVIEWS.map(RC).join("");
+      $$("#fr .rv").forEach((e) => io.observe(e));
+    </script>
+  </body>
+</html>
