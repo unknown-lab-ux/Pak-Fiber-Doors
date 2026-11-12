@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Fiber Door Designs, Beading and Frame | Pak Fiber Doors</title>
+    <meta
+      name="description"
+      content="Browse 66 fiber door designs plus beading and frame. Pick your article number and order on WhatsApp. Lifetime guarantee, delivery all over Pakistan."
+    />
+    <meta name="theme-color" content="#1b56a5" />
+    <link rel="canonical" href="https://pakfiberdoors.com/fiber-doors.html" />
+    <link rel="icon" href="logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Fiber Door Designs | Pak Fiber Doors" />
+    <meta property="og:description" content="66 fiber door designs, beading and frame. Order on WhatsApp." />
+    <meta property="og:url" content="https://pakfiberdoors.com/fiber-doors.html" />
+    <meta property="og:image" content="https://pakfiberdoors.com/heroimage.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-p="doors">
+    <!-- =====================================
+     NAVBAR (built by script.js)
+===================================== -->
+    <header id="nav"></header>
+    <main>
+      <!-- =====================================
+     PAGE BANNER
+===================================== -->
+      <div class="bn">
+        <div class="w">
+          <h1 class="up">Fiber Door Designs</h1>
+          <p class="up" style="--d: 0.2s">Pick an article, tap Order Now and we will take it from there.</p>
+        </div>
+      </div>
+      <!-- =====================================
+     FILTERS + SEARCH + DESIGN GRID
+===================================== -->
+      <section>
+        <div class="w">
+          <div class="tl">
+            <div class="fl">
+              <button class="on" data-f="all">All</button>
+              <button data-f="door">Doors</button>
+              <button data-f="beading">Beading</button>
+              <button data-f="frame">Frame</button>
+            </div>
+            <input
+              id="q"
+              type="search"
+              placeholder="Search article number"
+              aria-label="Search article number"
+            />
+          </div>
+          <p id="n" style="color: #5d6b7c; margin-bottom: 18px"></p>
+          <div class="g4" id="grid"></div>
+          <p class="em" id="em">No design found. Try another number.</p>
+        </div>
+      </section>
+      <!-- =====================================
+     CALL TO ACTION
+===================================== -->
+      <section class="cta">
+        <div class="w">
+          <h2>Need Help Choosing?</h2>
+          <p>Message us your door size and we will suggest the right article.</p>
+          <a class="btn b-g" data-wa="Hi! I need help choosing a fiber door.">Chat on WhatsApp</a>
+        </div>
+      </section>
+    </main>
+    <!-- =====================================
+     FOOTER (built by script.js)
+===================================== -->
+    <footer class="ft" id="foot"></footer>
+    <script src="script.js"></script>
+    <script>
+      // ===== DESIGN LIST: 66 doors + 4 beading + 1 frame (images: article1.png ... beading1.png ... frame1.png) =====
+      const items = [];
+      for (let i = 1; i <= 66; i++) items.push({ t: "door", s: `article${i}.png`, c: `Article ${i}` });
+      for (let i = 1; i <= 4; i++) items.push({ t: "beading", s: `beading${i}.png`, c: `Beading ${i}` });
+      items.push({ t: "frame", s: "frame1.png", c: "Frame 1" });
+      const W = (x) => L("Hi! I want to buy " + x.c + "."),
+        g = $("#grid");
+      // ===== BUILD ONE CARD PER DESIGN =====
+      g.innerHTML = items
+        .map(
+          (x, k) => `
+  <div class="cd art" data-t="${x.t}" data-c="${x.c.toLowerCase()}">
+    <div class="iw" data-k="${k}">
+      <img src="${x.s}" alt="Fiber ${x.t} ${x.c} - Pak Fiber Doors" loading="lazy" onerror="this.style.opacity=0">
+    </div>
+    <div class="tx">
+      <h3>${x.c}</h3>
+      <a class="btn b-g" target="_blank" rel="noopener" href="${W(x)}"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
+    </div>
+  </div>`,
+        )
+        .join("");
+      // ===== FILTER CHIPS + ARTICLE SEARCH =====
+      const cs = $$(".art");
+      let f = "all",
+        q = "",
+        vis = [];
+      function ap() {
+        vis = [];
+        cs.forEach((c, k) => {
+          const ok = (f == "all" || c.dataset.t == f) && c.dataset.c.includes(q);
+          c.style.display = ok ? "" : "none";
+          if (ok) vis.push(items[k]);
+        });
+        $("#em").style.display = vis.length ? "none" : "block";
+        $("#n").textContent = vis.length + " designs";
+      }
+      $$(".fl button").forEach(
+        (b) =>
+          (b.onclick = () => {
+            f = b.dataset.f;
+            $$(".fl button").forEach((x) => x.classList.toggle("on", x == b));
+            ap();
+          }),
+      );
+      $("#q").oninput = (e) => {
+        q = e.target.value.trim().toLowerCase();
+        ap();
+      };
+      // ===== CLICK A PHOTO TO OPEN THE LIGHTBOX =====
+      g.onclick = (e) => {
+        const w = e.target.closest(".iw");
+        if (!w) return;
+        const x = items[+w.dataset.k];
+        LB(
+          vis.map((v) => ({ s: v.s, c: v.c, w: W(v) })),
+          vis.indexOf(x),
+        );
+      };
+      // ===== OPEN A FILTER FROM A LINK, e.g. fiber-doors.html#frame =====
+      const h = location.hash.slice(1);
+      if (["door", "beading", "frame"].includes(h)) {
+        f = h;
+        $$(".fl button").forEach((x) => x.classList.toggle("on", x.dataset.f == h));
+      }
+      ap();
+    </script>
+  </body>
+</html>
