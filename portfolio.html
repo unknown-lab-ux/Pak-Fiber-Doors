@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portfolio | Fiber Doors Fitted by Pak Fiber Doors</title>
+    <meta
+      name="description"
+      content="See our completed fiber door projects across Pakistan. Quality manufacturing, polish and fitting by Pak Fiber Doors, Gujar Khan."
+    />
+    <meta name="theme-color" content="#1b56a5" />
+    <link rel="canonical" href="https://pakfiberdoors.com/portfolio.html" />
+    <link rel="icon" href="logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Portfolio | Pak Fiber Doors" />
+    <meta property="og:description" content="Our completed fiber door projects." />
+    <meta property="og:url" content="https://pakfiberdoors.com/portfolio.html" />
+    <meta property="og:image" content="https://pakfiberdoors.com/heroimage.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-p="portfolio">
+    <!-- =====================================
+     NAVBAR (built by script.js)
+===================================== -->
+    <header id="nav"></header>
+    <main>
+      <!-- =====================================
+     PAGE BANNER
+===================================== -->
+      <div class="bn">
+        <div class="w">
+          <h1 class="up">Our Portfolio</h1>
+          <p class="up" style="--d: 0.2s">
+            A look at fiber doors we have made, polished and fitted. Tap any photo to view it full size.
+          </p>
+        </div>
+      </div>
+      <!-- =====================================
+     PORTFOLIO GRID (30 photos, mixed sizes)
+===================================== -->
+      <section>
+        <div class="w"><div class="pg" id="pg"></div></div>
+      </section>
+      <!-- =====================================
+     CALL TO ACTION
+===================================== -->
+      <section class="cta">
+        <div class="w">
+          <h2>Want Your Home in Our Portfolio?</h2>
+          <p>Tell us what you need and we will send you a quote.</p>
+          <a class="btn b-g" data-wa="Hi! I want a quote from Pak Fiber Doors.">Get a Quote</a>
+        </div>
+      </section>
+    </main>
+    <!-- =====================================
+     FOOTER (built by script.js)
+===================================== -->
+    <footer class="ft" id="foot"></footer>
+    <script src="script.js"></script>
+    <script>
+      // ===== PHOTOS: portfolio1.png ... portfolio30.png. S = repeating size pattern for the mixed layout =====
+      const S = ["", "t", "", "w2", "", "bx", "t", "", "", "w2"],
+        P2 = [];
+      for (let i = 1; i <= 30; i++) P2.push({ s: `portfolio${i}.png`, c: `Project ${i}` });
+      // ===== BUILD THE GRID =====
+      $("#pg").innerHTML = P2.map(
+        (x, k) => `
+  <a class="${S[k % S.length]}" data-k="${k}" role="button" tabindex="0" aria-label="View ${x.c}">
+    <img src="${x.s}" alt="Fiber door project ${k + 1} by Pak Fiber Doors" loading="lazy" onerror="this.style.opacity=0">
+  </a>`,
+      ).join("");
+      // ===== CLICK / ENTER OPENS THE LIGHTBOX =====
+      const op = (a) =>
+        LB(
+          P2.map((x) => ({ s: x.s, c: x.c, w: "" })),
+          +a.dataset.k,
+        );
+      $("#pg").onclick = (e) => {
+        const a = e.target.closest("a");
+        if (a) op(a);
+      };
+      $("#pg").onkeydown = (e) => {
+        if (e.key == "Enter" && e.target.dataset.k) op(e.target);
+      };
+    </script>
+  </body>
+</html>
