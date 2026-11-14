@@ -76,7 +76,7 @@ $("#foot").innerHTML = `
     <!-- Bottom bar: copyright + Contact Developer (last item) -->
     <div class="cp">
       <span>© ${new Date().getFullYear()} Pak Fiber Doors. All rights reserved.</span>
-      <a class="btn b-g dev" data-wa="Hi! I want a premium / modern website like Pak Fiber Doors." data-to="${DEV_WA}"><i class="fa-solid fa-code"></i> Contact Developer</a>
+
     </div>
   </div>`;
 
